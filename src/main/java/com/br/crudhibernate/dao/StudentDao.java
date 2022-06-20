@@ -45,7 +45,7 @@ public class StudentDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Student> getStudent() {
+	public List<Student> getAllStudents() {
 		Transaction transaction = null;
 		List<Student> students = null;
 		try (Session session = (Session) HibernateUtil.getSessionFactory().openSession()) {
@@ -79,7 +79,7 @@ public class StudentDao {
 		return student;
 	}
 
-	public void delete(long id) {
+	public void deleteByID(long id) {
 		Transaction transaction = null;
 		Student student = null;
 		try (Session session = (Session) HibernateUtil.getSessionFactory().openSession()) {
